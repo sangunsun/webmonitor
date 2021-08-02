@@ -1,0 +1,1 @@
+http://abc.aaa.com/kk.jsp  ~<time>.*<time>
