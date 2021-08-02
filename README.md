@@ -11,7 +11,7 @@ watch  a web page is changed
 
 ### 使用说明：（写给二进制文件使用者看的，而不是写给源码阅读者看的）
 
-+ #### 一、本软件为绿色软件，解压即可以执行  
+ 
 + #### 二、本目录下初始共有三个文件 webmonitor.exe、urls.txt、config.txt 及一个文件夹log  
   + 其中webmonitor为主程序，在shell下执行就可以；urls.txt为要监控的url地址列表，一个url一行，如果该url含有动态参数 在url后使用~符号后跟过滤用正则表达式过滤动态参数  
   + config.txt为网页发生变更时需要发送邮件的配置文件，其中第一行配置发送服务器信息，依次为smtp服务器地址，端口号,用户名,密码,各参数用逗号分隔  
