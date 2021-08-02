@@ -1,0 +1,3 @@
+smtp.abc.com,465,aaa@abc.com,passwd
+recieve@abc.com
+recieve2@abc.com
