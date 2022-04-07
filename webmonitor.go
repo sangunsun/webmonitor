@@ -1,4 +1,3 @@
-
 package main
 
 import (
@@ -238,7 +237,9 @@ func monAPage(url string) {
 		if err != nil {
 			// 发送网页无法打开的错误给预留邮箱。
 
+			pages.Lock()
 			pages.isFalse[url]++
+			pages.Unlock()
 			if pages.isFalse[url] == 4 {
 				fmt.Println("异常，无法打开网页", url, fmt.Sprint(err), time.Now())
 				err = SendMail("读网页错误", url)
@@ -273,7 +274,9 @@ func monAPage(url string) {
 
 		}
 		//只要能正常读网页了，失败次数就要清零
+		pages.Lock()
 		pages.isFalse[url] = 0
+		pages.Unlock()
 
 		if md5v1(pages.nowPages[url]) != md5v1(pages.oldPages[url]) {
 			diffstr := diffTxt2(pages.oldPages[url], pages.nowPages[url])
@@ -310,7 +313,9 @@ func monAPage(url string) {
 
 			//网页变动，并且发送邮件成功后，把新网页做为对比网页保存,这样可以防止不断的重复发送邮件。
 			if err == nil {
+				pages.Lock()
 				pages.oldPages[url] = pages.nowPages[url]
+				pages.Unlock()
 			}
 		}
 
