@@ -1,5 +1,5 @@
 # webmonitor
-watch  a web page is changed
+Monitor page for changes
 
 ### 修改记录
 
