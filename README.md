@@ -1,5 +1,5 @@
 # webmonitor
-Monitor page for changes
+这是一个网页内容监测器，可监测多个网页，如果网页内容变化就通过邮件进行报警
 
 ### 修改记录
 
