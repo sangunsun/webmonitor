@@ -228,12 +228,12 @@ func monAPage(url string) {
 	defer func() {
 		fmt.Println("程序异常退出了。。。", time.Now())
 	}()
-
+	fmt.Println("开始监控:",url)
 	for {
-		fmt.Println("开始读:", url)
+		//fmt.Println("开始读:", url)
 		page, err = readAURL(url)
-		fmt.Println("完成读:", url, err)
-		fmt.Println(runtime.NumGoroutine())
+		//fmt.Println("完成读:", url, err)
+		//fmt.Println(runtime.NumGoroutine())
 		if err != nil {
 			// 发送网页无法打开的错误给预留邮箱。
 
